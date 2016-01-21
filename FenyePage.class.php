@@ -7,7 +7,7 @@
  */
 
 class FenyePage{
-    public $pageSize =6;
+    public $pageSize;
     public $res_array;
     public $rowCount;
     public $pageNow;

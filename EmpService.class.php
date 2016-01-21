@@ -38,8 +38,13 @@ class EmpService{
     function getFenyePage($fenyePage){
         $sqlhelper = new SqlHelper();
         $sql1 = "select * from emp limit ".($fenyePage->pageNow-1)*$fenyePage->pageSize.",".$fenyePage->pageSize;
+
+        echo "当前页:".$fenyePage->pageNow."<br/>";
+        echo $sql1;;
+
         $sql2 = "select count(id) from emp";
         $sqlhelper->exectue_dql_fenye($sql1,$sql2,$fenyePage);
+        $sqlhelper->close_conn();
 
     }
 }

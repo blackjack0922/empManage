@@ -55,8 +55,8 @@ class  SqlHelper
 
         $res =mysqli_query($this->conn,$sql2);
         if($row = mysqli_fetch_row($res)){
-            $fenyePage->pageCount = ceil(($row[0])/$fenyePage->pageSize);
-            $fenyePage->rowCount = row[0];
+            $fenyePage->pageCount = ceil($row[0]/$fenyePage->pageSize);
+            $fenyePage->rowCount =$row[0];
         }
         mysqli_free_result($res);
         $navigate= "";
@@ -69,9 +69,6 @@ class  SqlHelper
             $nextPage=$fenyePage->pageNow+1;
             $navigate.="<a href='empList.php?pageNow=$nextPage'>&nbsp;下一页&nbsp;</a>";
         }
-
-
-
         $fenyePage->res_array = $arr;
         $fenyePage->navigate = $navigate;
 
