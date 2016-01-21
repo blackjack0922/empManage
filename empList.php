@@ -6,7 +6,8 @@
 <?php
 header("Content-type: text/html; charset=utf-8");
 //用户信息列表
-
+require_once "SqlHelper.class.php";
+require_once "FenyePage.class.php";
 $link = mysqli_connect("localhost","root","090324","empmanage");
 if(!$link){
     die("连接失败".mysqli_error());
